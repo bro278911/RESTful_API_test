@@ -48,7 +48,7 @@ namespace RESTful_API_test.Controllers
                     member.Id = Convert.ToInt32(dt.Rows[i]["Id"].ToString());
                     member.Name = dt.Rows[i]["Name"].ToString();
                     member.Age = dt.Rows[i]["Age"].ToString();
-                    member.email = dt.Rows[i]["e-mail"].ToString();
+                    member.email = dt.Rows[i]["email"].ToString();
                     member.address = dt.Rows[i]["address"].ToString();
                     member.work = dt.Rows[i]["work"].ToString();
                     member.datetime = dt.Rows[i]["datetime"].ToString();
@@ -79,7 +79,7 @@ namespace RESTful_API_test.Controllers
                     member.Id = Convert.ToInt32(dt.Rows[i]["Id"].ToString());
                     member.Name = dt.Rows[i]["Name"].ToString();
                     member.Age = dt.Rows[i]["Age"].ToString();
-                    member.email = dt.Rows[i]["e-mail"].ToString();
+                    member.email = dt.Rows[i]["email"].ToString();
                     member.address = dt.Rows[i]["address"].ToString();
                     member.work = dt.Rows[i]["work"].ToString();
                     member.datetime = dt.Rows[i]["datetime"].ToString();
@@ -99,7 +99,7 @@ namespace RESTful_API_test.Controllers
         {
             SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("API_connection").ToString());
             conn.Open();
-            SqlCommand command = new SqlCommand("INSERT INTO [dbo].[API_TEST]([name], [age], [e-mail],[address],[work]) VALUES ('" + name + "', '" + age + "', '" + email + "','" + address + "','" + work + "')");
+            SqlCommand command = new SqlCommand("INSERT INTO [dbo].[API_TEST]([name], [age], [email],[address],[work]) VALUES ('" + name + "', '" + age + "', '" + email + "','" + address + "','" + work + "')");
             command.Connection = conn;
             int check_num = command.ExecuteNonQuery();
             conn.Close();
@@ -125,7 +125,7 @@ namespace RESTful_API_test.Controllers
         {
             SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("API_connection").ToString());
             conn.Open();
-            SqlCommand command = new SqlCommand("UPDATE [dbo].[API_TEST] SET [name]='" + name + "', [age]=" + age + ", [e-mail]='" + email + "',[address]='" + address + "',[work]='" + work + "' WHERE (id = '"+ id + "')");
+            SqlCommand command = new SqlCommand("UPDATE [dbo].[API_TEST] SET [name]='" + name + "', [age]=" + age + ", [email]='" + email + "',[address]='" + address + "',[work]='" + work + "' WHERE (id = '"+ id + "')");
             command.Connection = conn;
             int check_num = command.ExecuteNonQuery();
             conn.Close();
